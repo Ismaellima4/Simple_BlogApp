@@ -1,0 +1,30 @@
+<div class="bg-light p-5 rounded-lg m-3">
+    <h1 class="display-4">Bem vindo ao Simple Blog</h1>
+    <p class="lead">Este é um Blog simples, desenvolvido com NodeJs + Express + MongoDB.</p>
+    <hr class="my-4">
+    <p class="lead">
+        <a href="" class="btn btn-primary btn-lg" href="#" role="button">Crie uma conta</a>
+    </p>
+</div>
+
+<hr>
+
+<h2>Postagens recentes:</h2>
+
+
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <small>{{descricao}}</small><br>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success mt-2">Leia mais</button></a>
+        <hr>
+        <small>Categoria: {{categoria.nome}}</small><br>
+        <small>Data de Publicação: {{date}}</small>
+    </div>
+</div>
+
+{{else}}
+ <h5>Nenhuma Postagens!</h5>
+
+{{/each}}
